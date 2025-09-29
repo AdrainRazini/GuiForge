@@ -1,5 +1,11 @@
 # GuiForge
 
+```
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AdrainRazini/mastermod/refs/heads/main/module/dataGui.lua"))()
+
+```
+
 This is a lightweight and customizable UI library for mods, designed to create modern, dynamic, and responsive interfaces in Roblox.
 It provides ready-to-use components like tabs, buttons, sliders, checkboxes, toggles, labels, notifications, and more, all styled with a clean and flexible design system.
 
