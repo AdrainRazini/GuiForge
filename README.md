@@ -42,40 +42,96 @@ local GuiForge = loadstring(game:HttpGet("https://raw.githubusercontent.com/Adra
 
 -- Create a main window
 local window = GuiForge.TabsWindow({
-    Title = "My Mod Menu",
-    Size = UDim2.new(0, 400, 0, 300),
-    Text = "GuiForge Example"
+	Title = "My Mod Menu",
+	Size = UDim2.new(0, 400, 0, 300),
+	Text = "GuiForge Example"
 })
 
 -- Create a tab
 local mainTab = GuiForge.CreateTab(window, {Name = "Main"})
 
+-- Add a label
+GuiForge.CreateLabel(mainTab, {
+	Text = "Welcome to GuiForge!",
+	Color = "White",
+	Alignment = "Center"
+})
+
+
+local OptionsStrings = GuiForge.CreateSelectorOpitions(mainTab, {
+	Name = "Selector",
+	Alignment = "Center",
+	Size_Frame = UDim2.new(1,-10,0,50),
+	Frame_Max = 50,
+	Options = {
+
+		"On",
+		"Off"
+
+	},
+
+	Type = "String"
+}, function(val)
+	print("Você escolheu:", val)
+end)
+
+local OptionsInstance = GuiForge.CreateSelectorOpitions(mainTab, {
+	Name = "Selector",
+	Alignment = "Center",
+	Size_Frame = UDim2.new(1,-10,0,50),
+	Frame_Max = 50,
+	Options = {
+
+		{name = "Name", Obj = "Parent"},
+		
+	},
+
+	Type = "Instance"
+}, function(val)
+	print("Você escolheu:", val)
+end)
+
 -- Add a button
 GuiForge.CreateButton(mainTab, {
-    Text = "Click Me",
-    Color = "White",
-    BGColor = "Blue"
+	Text = "Click Me",
+	Color = "White",
+	BGColor = "Blue"
 }, function()
-    print("Button clicked!")
+	print("Button clicked!")
+	GuiForge.NotificationPerson(window.Frame.Parent, {
+		Title = "Hello!",
+		Text = "You clicked the button!",
+		Tempo = 3,
+		Icon = "fa_envelope"
+	})
 end)
 
 -- Add a toggle
 GuiForge.CreateToggleboxe(mainTab, {
-    Text = "Enable Feature",
-    Color = "Green"
+	Text = "Enable Feature",
+	Color = "Green"
 }, function(state)
-    print("Toggle state:", state)
+	print("Toggle state:", state)
+end)
+
+-- Add a checkbox
+GuiForge.CreateCheckboxe(mainTab, {
+	Text = "Extra Option",
+	Color = "Yellow"
+}, function(state)
+	print("Checkbox state:", state)
 end)
 
 -- Add a slider
 GuiForge.CreateSliderInt(mainTab, {
-    Text = "Speed",
-    Minimum = 1,
-    Maximum = 10,
-    Value = 5
+	Text = "Speed",
+	Minimum = 1,
+	Maximum = 10,
+	Value = 5
 }, function(value)
-    print("Slider value:", value)
+	print("Slider value:", value)
 end)
+
 ```
 
 ---
