@@ -2,7 +2,7 @@
 
 ```
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AdrainRazini/mastermod/refs/heads/main/module/dataGui.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AdrainRazini/GuiForge/refs/heads/main/Modules/Regui.lua"))()
 
 ```
 
