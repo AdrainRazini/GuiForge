@@ -2,7 +2,7 @@
 local Regui
 -- Tenta carregar localmente
 local success, module = pcall(function()
-	return require(script.Parent:FindFirstChild("Mod_UI"))
+	return loadstring(game:HttpGet("https://raw.githubusercontent.com/AdrainRazini/mastermod/refs/heads/main/module/dataGui.lua"))()
 end)
 
 if success and module then
